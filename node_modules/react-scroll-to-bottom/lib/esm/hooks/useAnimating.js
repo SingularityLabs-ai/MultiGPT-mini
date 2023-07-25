@@ -1,0 +1,9 @@
+/* eslint no-magic-numbers: ["error", { "ignore": [2] }] */
+import useStateContext from './internal/useStateContext';
+export default function useAnimating() {
+  var _useStateContext = useStateContext(2),
+      animating = _useStateContext.animating;
+
+  return [animating];
+}
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3NyYy9ob29rcy91c2VBbmltYXRpbmcuanMiXSwibmFtZXMiOlsidXNlU3RhdGVDb250ZXh0IiwidXNlQW5pbWF0aW5nIiwiYW5pbWF0aW5nIl0sIm1hcHBpbmdzIjoiQUFBQTtBQUVBLE9BQU9BLGVBQVAsTUFBNEIsNEJBQTVCO0FBRUEsZUFBZSxTQUFTQyxZQUFULEdBQXdCO0FBQ3JDLHlCQUFzQkQsZUFBZSxDQUFDLENBQUQsQ0FBckM7QUFBQSxNQUFRRSxTQUFSLG9CQUFRQSxTQUFSOztBQUVBLFNBQU8sQ0FBQ0EsU0FBRCxDQUFQO0FBQ0QiLCJzb3VyY2VzQ29udGVudCI6WyIvKiBlc2xpbnQgbm8tbWFnaWMtbnVtYmVyczogW1wiZXJyb3JcIiwgeyBcImlnbm9yZVwiOiBbMl0gfV0gKi9cblxuaW1wb3J0IHVzZVN0YXRlQ29udGV4dCBmcm9tICcuL2ludGVybmFsL3VzZVN0YXRlQ29udGV4dCc7XG5cbmV4cG9ydCBkZWZhdWx0IGZ1bmN0aW9uIHVzZUFuaW1hdGluZygpIHtcbiAgY29uc3QgeyBhbmltYXRpbmcgfSA9IHVzZVN0YXRlQ29udGV4dCgyKTtcblxuICByZXR1cm4gW2FuaW1hdGluZ107XG59XG4iXX0=

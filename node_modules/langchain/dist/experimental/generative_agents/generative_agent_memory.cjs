@@ -1,0 +1,326 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.GenerativeAgentMemory = void 0;
+const llm_chain_js_1 = require("../../chains/llm_chain.cjs");
+const index_js_1 = require("../../prompts/index.cjs");
+const document_js_1 = require("../../document.cjs");
+const base_js_1 = require("../../memory/base.cjs");
+class GenerativeAgentMemory extends base_js_1.BaseMemory {
+    constructor(llm, memoryRetriever, config) {
+        super();
+        Object.defineProperty(this, "llm", {
+            enumerable: true,
+            configurable: true,
+            writable: true,
+            value: void 0
+        });
+        Object.defineProperty(this, "memoryRetriever", {
+            enumerable: true,
+            configurable: true,
+            writable: true,
+            value: void 0
+        });
+        Object.defineProperty(this, "verbose", {
+            enumerable: true,
+            configurable: true,
+            writable: true,
+            value: void 0
+        });
+        Object.defineProperty(this, "reflectionThreshold", {
+            enumerable: true,
+            configurable: true,
+            writable: true,
+            value: void 0
+        });
+        Object.defineProperty(this, "currentPlan", {
+            enumerable: true,
+            configurable: true,
+            writable: true,
+            value: []
+        });
+        Object.defineProperty(this, "importanceWeight", {
+            enumerable: true,
+            configurable: true,
+            writable: true,
+            value: 0.15
+        });
+        Object.defineProperty(this, "aggregateImportance", {
+            enumerable: true,
+            configurable: true,
+            writable: true,
+            value: 0.0
+        });
+        Object.defineProperty(this, "maxTokensLimit", {
+            enumerable: true,
+            configurable: true,
+            writable: true,
+            value: 1200
+        });
+        Object.defineProperty(this, "queriesKey", {
+            enumerable: true,
+            configurable: true,
+            writable: true,
+            value: "queries"
+        });
+        Object.defineProperty(this, "mostRecentMemoriesTokenKey", {
+            enumerable: true,
+            configurable: true,
+            writable: true,
+            value: "recent_memories_token"
+        });
+        Object.defineProperty(this, "addMemoryKey", {
+            enumerable: true,
+            configurable: true,
+            writable: true,
+            value: "addMemory"
+        });
+        Object.defineProperty(this, "relevantMemoriesKey", {
+            enumerable: true,
+            configurable: true,
+            writable: true,
+            value: "relevant_memories"
+        });
+        Object.defineProperty(this, "relevantMemoriesSimpleKey", {
+            enumerable: true,
+            configurable: true,
+            writable: true,
+            value: "relevant_memories_simple"
+        });
+        Object.defineProperty(this, "mostRecentMemoriesKey", {
+            enumerable: true,
+            configurable: true,
+            writable: true,
+            value: "most_recent_memories"
+        });
+        Object.defineProperty(this, "nowKey", {
+            enumerable: true,
+            configurable: true,
+            writable: true,
+            value: "now"
+        });
+        Object.defineProperty(this, "reflecting", {
+            enumerable: true,
+            configurable: true,
+            writable: true,
+            value: false
+        });
+        this.llm = llm;
+        this.memoryRetriever = memoryRetriever;
+        this.verbose = config?.verbose ?? this.verbose;
+        this.reflectionThreshold =
+            config?.reflectionThreshold ?? this.reflectionThreshold;
+        this.importanceWeight = config?.importanceWeight ?? this.importanceWeight;
+        this.maxTokensLimit = config?.maxTokensLimit ?? this.maxTokensLimit;
+    }
+    getRelevantMemoriesKey() {
+        return this.relevantMemoriesKey;
+    }
+    getMostRecentMemoriesTokenKey() {
+        return this.mostRecentMemoriesTokenKey;
+    }
+    getAddMemoryKey() {
+        return this.addMemoryKey;
+    }
+    getCurrentTimeKey() {
+        return this.nowKey;
+    }
+    get memoryKeys() {
+        // Return an array of memory keys
+        return [this.relevantMemoriesKey, this.mostRecentMemoriesKey];
+    }
+    chain(prompt) {
+        const chain = new llm_chain_js_1.LLMChain({
+            llm: this.llm,
+            prompt,
+            verbose: this.verbose,
+            outputKey: "output",
+        });
+        return chain;
+    }
+    static parseList(text) {
+        // parse a newine seperates string into a list of strings
+        return text.split("\n").map((s) => s.trim());
+    }
+    async getTopicsOfReflection(lastK = 50) {
+        const prompt = index_js_1.PromptTemplate.fromTemplate("{observations}\n\n" +
+            "Given only the information above, what are the 3 most salient" +
+            " high-level questions we can answer about the subjects in" +
+            " the statements? Provide each question on a new line.\n\n");
+        const observations = this.memoryRetriever.getMemoryStream().slice(-lastK);
+        const observationStr = observations
+            .map((o) => o.pageContent)
+            .join("\n");
+        const result = await this.chain(prompt).run(observationStr);
+        return GenerativeAgentMemory.parseList(result);
+    }
+    async getInsightsOnTopic(topic, now) {
+        // generate insights on a topic of reflection, based on pertinent memories
+        const prompt = index_js_1.PromptTemplate.fromTemplate("Statements about {topic}\n" +
+            "{related_statements}\n\n" +
+            "What 5 high-level insights can you infer from the above statements?" +
+            " (example format: insight (because of 1, 5, 3))");
+        const relatedMemories = await this.fetchMemories(topic, now);
+        const relatedStatements = relatedMemories
+            .map((memory, index) => `${index + 1}. ${memory.pageContent}`)
+            .join("\n");
+        const result = await this.chain(prompt).call({
+            topic,
+            relatedStatements,
+        });
+        return GenerativeAgentMemory.parseList(result.output); // added output
+    }
+    async pauseToReflect(now) {
+        if (this.verbose) {
+            console.log("Pausing to reflect...");
+        }
+        const newInsights = [];
+        const topics = await this.getTopicsOfReflection();
+        for (const topic of topics) {
+            const insights = await this.getInsightsOnTopic(topic, now);
+            for (const insight of insights) {
+                // add memory
+                await this.addMemory(insight, now);
+            }
+            newInsights.push(...insights);
+        }
+        return newInsights;
+    }
+    async scoreMemoryImportance(memoryContent) {
+        // score the absolute importance of a given memory
+        const prompt = index_js_1.PromptTemplate.fromTemplate("On the scale of 1 to 10, where 1 is purely mundane" +
+            " (e.g., brushing teeth, making bed) and 10 is" +
+            " extremely poignant (e.g., a break up, college" +
+            " acceptance), rate the likely poignancy of the" +
+            " following piece of memory. Respond with a single integer." +
+            "\nMemory: {memory_content}" +
+            "\nRating: ");
+        const score = await this.chain(prompt).run({
+            memoryContent,
+        });
+        const strippedScore = score.trim();
+        if (this.verbose) {
+            console.log("Importance score:", strippedScore);
+        }
+        const match = strippedScore.match(/^\D*(\d+)/);
+        if (match) {
+            const capturedNumber = parseFloat(match[1]);
+            const result = (capturedNumber / 10) * this.importanceWeight;
+            return result;
+        }
+        else {
+            return 0.0;
+        }
+    }
+    async addMemory(memoryContent, now) {
+        // add an observation or memory to the agent's memory
+        const importanceScore = await this.scoreMemoryImportance(memoryContent);
+        this.aggregateImportance += importanceScore;
+        const document = new document_js_1.Document({
+            pageContent: memoryContent,
+            metadata: {
+                importance: importanceScore,
+            },
+        });
+        await this.memoryRetriever.addDocuments([document]);
+        // after an agent has processed a certain amoung of memories (as measured by aggregate importance),
+        // it is time to pause and reflect on recent events to add more synthesized memories to the agent's
+        // memory stream.
+        if (this.reflectionThreshold !== undefined &&
+            this.aggregateImportance > this.reflectionThreshold &&
+            !this.reflecting) {
+            this.reflecting = true;
+            await this.pauseToReflect(now);
+            this.aggregateImportance = 0.0;
+            this.reflecting = false;
+        }
+    }
+    // TODO: Mock "now" to simulate different times
+    async fetchMemories(observation, _now) {
+        return this.memoryRetriever.getRelevantDocuments(observation);
+    }
+    formatMemoriesDetail(relevantMemories) {
+        if (!relevantMemories.length) {
+            return "No relevant information.";
+        }
+        const contentStrings = new Set();
+        const content = [];
+        for (const memory of relevantMemories) {
+            if (memory.pageContent in contentStrings) {
+                continue;
+            }
+            contentStrings.add(memory.pageContent);
+            const createdTime = memory.metadata.created_at.toLocaleString("en-US", {
+                month: "long",
+                day: "numeric",
+                year: "numeric",
+                hour: "numeric",
+                minute: "numeric",
+                hour12: true,
+            });
+            content.push(`${createdTime}: ${memory.pageContent.trim()}`);
+        }
+        const joinedContent = content.map((mem) => `${mem}`).join("\n");
+        return joinedContent;
+    }
+    formatMemoriesSimple(relevantMemories) {
+        const joinedContent = relevantMemories
+            .map((mem) => `${mem.pageContent}`)
+            .join("; ");
+        return joinedContent;
+    }
+    async getMemoriesUntilLimit(consumedTokens) {
+        // reduce the number of tokens in the documents
+        const result = [];
+        for (const doc of this.memoryRetriever
+            .getMemoryStream()
+            .slice()
+            .reverse()) {
+            if (consumedTokens >= this.maxTokensLimit) {
+                if (this.verbose) {
+                    console.log("Exceeding max tokens for LLM, filtering memories");
+                }
+                break;
+            }
+            // eslint-disable-next-line no-param-reassign
+            consumedTokens += await this.llm.getNumTokens(doc.pageContent);
+            if (consumedTokens < this.maxTokensLimit) {
+                result.push(doc);
+            }
+        }
+        return this.formatMemoriesSimple(result);
+    }
+    get memoryVariables() {
+        // input keys this memory class will load dynamically
+        return [];
+    }
+    async loadMemoryVariables(inputs) {
+        const queries = inputs[this.queriesKey];
+        const now = inputs[this.nowKey];
+        if (queries !== undefined) {
+            const relevantMemories = (await Promise.all(queries.map((query) => this.fetchMemories(query, now)))).flat();
+            return {
+                [this.relevantMemoriesKey]: this.formatMemoriesDetail(relevantMemories),
+                [this.relevantMemoriesSimpleKey]: this.formatMemoriesSimple(relevantMemories),
+            };
+        }
+        const mostRecentMemoriesToken = inputs[this.mostRecentMemoriesTokenKey];
+        if (mostRecentMemoriesToken !== undefined) {
+            return {
+                [this.mostRecentMemoriesKey]: await this.getMemoriesUntilLimit(mostRecentMemoriesToken),
+            };
+        }
+        return {};
+    }
+    async saveContext(_inputs, outputs) {
+        // save the context of this model run to memory
+        const mem = outputs[this.addMemoryKey];
+        const now = outputs[this.nowKey];
+        if (mem) {
+            await this.addMemory(mem, now);
+        }
+    }
+    clear() {
+        // TODO: clear memory contents
+    }
+}
+exports.GenerativeAgentMemory = GenerativeAgentMemory;

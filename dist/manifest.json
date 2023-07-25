@@ -1,0 +1,68 @@
+{
+  "manifest_version": 3,
+  "name": "__MSG_appName__",
+  "description": "__MSG_appDesc__",
+  "default_locale": "en",
+  "version": "0.0.4",
+  "icons": {
+    "16": "src/assets/icon.png",
+    "32": "src/assets/icon.png",
+    "48": "src/assets/icon.png",
+    "128": "src/assets/icon.png"
+  },
+  "background": {
+    "service_worker": "service-worker-loader.js",
+    "type": "module"
+  },
+  "action": {},
+  "host_permissions": [
+    "https://*.bing.com/",
+    "https://*.openai.com/",
+    "https://bard.google.com/"
+  ],
+  "optional_host_permissions": [
+    "https://*/*"
+  ],
+  "permissions": [
+    "storage",
+    "unlimitedStorage",
+    "sidePanel"
+  ],
+  "content_scripts": [
+    {
+      "js": [
+        "assets/chatgpt-inpage-proxy.ts-loader-be0641bf.js"
+      ],
+      "matches": [
+        "https://chat.openai.com/*"
+      ]
+    }
+  ],
+  "commands": {
+    "open-app": {
+      "suggested_key": {
+        "default": "Alt+J",
+        "windows": "Alt+J",
+        "linux": "Alt+J",
+        "mac": "Command+J"
+      },
+      "description": "Open MultiGPT app"
+    }
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "web_accessible_resources": [
+    {
+      "matches": [
+        "https://chat.openai.com/*"
+      ],
+      "resources": [
+        "assets/browser-polyfill-27087e75.js",
+        "assets/proxy-fetch-986807a3.js",
+        "assets/chatgpt-inpage-proxy.ts-b4370723.js"
+      ],
+      "use_dynamic_url": true
+    }
+  ]
+}

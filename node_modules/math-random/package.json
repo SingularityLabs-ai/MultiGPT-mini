@@ -1,0 +1,18 @@
+{
+  "name": "math-random",
+  "author": "Michael Rhodes",
+  "version": "2.0.1",
+  "main": "node",
+  "browser": {
+    "./node": "./browser/index",
+    "./crypto": "./browser/crypto"
+  },
+  "repository": "github:michaelrhodes/math-random",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "dexy": "github:michaelrhodes/dexy#1.0.4"
+  },
+  "scripts": {
+    "test": "dexy test"
+  }
+}

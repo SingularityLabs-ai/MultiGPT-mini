@@ -1,0 +1,3 @@
+import type { Draft } from 'immer';
+import type { WritableAtom } from 'jotai/vanilla';
+export declare function atomWithImmer<Value>(initialValue: Value): WritableAtom<Value, [Value | ((draft: Draft<Value>) => void)], void>;

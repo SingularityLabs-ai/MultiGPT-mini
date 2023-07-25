@@ -1,0 +1,29 @@
+{
+  "name": "cmdk",
+  "version": "0.2.0",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepublishOnly": "cp ../README.md . && pnpm build",
+    "postpublish": "rm README.md",
+    "build": "tsup src",
+    "dev": "tsup src --watch"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "dependencies": {
+    "@radix-ui/react-dialog": "1.0.0",
+    "command-score": "0.1.2"
+  },
+  "devDependencies": {
+    "@types/react": "18.0.15"
+  },
+  "sideEffects": false
+}

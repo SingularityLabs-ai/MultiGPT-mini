@@ -1,0 +1,93 @@
+Object.defineProperty(exports, '__esModule', { value: true });
+
+const hubextensions = require('./tracing/hubextensions.js');
+const idletransaction = require('./tracing/idletransaction.js');
+const span = require('./tracing/span.js');
+const transaction = require('./tracing/transaction.js');
+const utils$1 = require('./tracing/utils.js');
+const spanstatus = require('./tracing/spanstatus.js');
+const trace = require('./tracing/trace.js');
+const exports$1 = require('./exports.js');
+const hub = require('./hub.js');
+const session = require('./session.js');
+const sessionflusher = require('./sessionflusher.js');
+const scope = require('./scope.js');
+const api = require('./api.js');
+const baseclient = require('./baseclient.js');
+const sdk = require('./sdk.js');
+const base = require('./transports/base.js');
+const offline = require('./transports/offline.js');
+const multiplexed = require('./transports/multiplexed.js');
+const version = require('./version.js');
+const integration = require('./integration.js');
+const index = require('./integrations/index.js');
+const prepareEvent = require('./utils/prepareEvent.js');
+const checkin = require('./checkin.js');
+const hasTracingEnabled = require('./utils/hasTracingEnabled.js');
+const constants = require('./constants.js');
+const functiontostring = require('./integrations/functiontostring.js');
+const inboundfilters = require('./integrations/inboundfilters.js');
+const utils = require('@sentry/utils');
+
+
+
+exports.addTracingExtensions = hubextensions.addTracingExtensions;
+exports.startIdleTransaction = hubextensions.startIdleTransaction;
+exports.IdleTransaction = idletransaction.IdleTransaction;
+exports.TRACING_DEFAULTS = idletransaction.TRACING_DEFAULTS;
+exports.Span = span.Span;
+exports.spanStatusfromHttpCode = span.spanStatusfromHttpCode;
+exports.Transaction = transaction.Transaction;
+exports.getActiveTransaction = utils$1.getActiveTransaction;
+Object.defineProperty(exports, 'SpanStatus', {
+  enumerable: true,
+  get: () => spanstatus.SpanStatus
+});
+exports.trace = trace.trace;
+exports.addBreadcrumb = exports$1.addBreadcrumb;
+exports.captureCheckIn = exports$1.captureCheckIn;
+exports.captureEvent = exports$1.captureEvent;
+exports.captureException = exports$1.captureException;
+exports.captureMessage = exports$1.captureMessage;
+exports.configureScope = exports$1.configureScope;
+exports.setContext = exports$1.setContext;
+exports.setExtra = exports$1.setExtra;
+exports.setExtras = exports$1.setExtras;
+exports.setTag = exports$1.setTag;
+exports.setTags = exports$1.setTags;
+exports.setUser = exports$1.setUser;
+exports.startTransaction = exports$1.startTransaction;
+exports.withScope = exports$1.withScope;
+exports.Hub = hub.Hub;
+exports.ensureHubOnCarrier = hub.ensureHubOnCarrier;
+exports.getCurrentHub = hub.getCurrentHub;
+exports.getHubFromCarrier = hub.getHubFromCarrier;
+exports.getMainCarrier = hub.getMainCarrier;
+exports.makeMain = hub.makeMain;
+exports.runWithAsyncContext = hub.runWithAsyncContext;
+exports.setAsyncContextStrategy = hub.setAsyncContextStrategy;
+exports.setHubOnCarrier = hub.setHubOnCarrier;
+exports.closeSession = session.closeSession;
+exports.makeSession = session.makeSession;
+exports.updateSession = session.updateSession;
+exports.SessionFlusher = sessionflusher.SessionFlusher;
+exports.Scope = scope.Scope;
+exports.addGlobalEventProcessor = scope.addGlobalEventProcessor;
+exports.getEnvelopeEndpointWithUrlEncodedAuth = api.getEnvelopeEndpointWithUrlEncodedAuth;
+exports.getReportDialogEndpoint = api.getReportDialogEndpoint;
+exports.BaseClient = baseclient.BaseClient;
+exports.initAndBind = sdk.initAndBind;
+exports.createTransport = base.createTransport;
+exports.makeOfflineTransport = offline.makeOfflineTransport;
+exports.makeMultiplexedTransport = multiplexed.makeMultiplexedTransport;
+exports.SDK_VERSION = version.SDK_VERSION;
+exports.getIntegrationsToSetup = integration.getIntegrationsToSetup;
+exports.Integrations = index;
+exports.prepareEvent = prepareEvent.prepareEvent;
+exports.createCheckInEnvelope = checkin.createCheckInEnvelope;
+exports.hasTracingEnabled = hasTracingEnabled.hasTracingEnabled;
+exports.DEFAULT_ENVIRONMENT = constants.DEFAULT_ENVIRONMENT;
+exports.FunctionToString = functiontostring.FunctionToString;
+exports.InboundFilters = inboundfilters.InboundFilters;
+exports.extractTraceparentData = utils.extractTraceparentData;
+//# sourceMappingURL=index.js.map

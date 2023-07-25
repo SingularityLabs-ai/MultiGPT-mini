@@ -1,0 +1,9 @@
+/* eslint no-magic-numbers: ["error", { "ignore": [2] }] */
+import useStateContext from './internal/useStateContext';
+export default function useSticky() {
+  var _useStateContext = useStateContext(2),
+      sticky = _useStateContext.sticky;
+
+  return [sticky];
+}
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3NyYy9ob29rcy91c2VTdGlja3kuanMiXSwibmFtZXMiOlsidXNlU3RhdGVDb250ZXh0IiwidXNlU3RpY2t5Iiwic3RpY2t5Il0sIm1hcHBpbmdzIjoiQUFBQTtBQUVBLE9BQU9BLGVBQVAsTUFBNEIsNEJBQTVCO0FBRUEsZUFBZSxTQUFTQyxTQUFULEdBQXFCO0FBQ2xDLHlCQUFtQkQsZUFBZSxDQUFDLENBQUQsQ0FBbEM7QUFBQSxNQUFRRSxNQUFSLG9CQUFRQSxNQUFSOztBQUVBLFNBQU8sQ0FBQ0EsTUFBRCxDQUFQO0FBQ0QiLCJzb3VyY2VzQ29udGVudCI6WyIvKiBlc2xpbnQgbm8tbWFnaWMtbnVtYmVyczogW1wiZXJyb3JcIiwgeyBcImlnbm9yZVwiOiBbMl0gfV0gKi9cblxuaW1wb3J0IHVzZVN0YXRlQ29udGV4dCBmcm9tICcuL2ludGVybmFsL3VzZVN0YXRlQ29udGV4dCc7XG5cbmV4cG9ydCBkZWZhdWx0IGZ1bmN0aW9uIHVzZVN0aWNreSgpIHtcbiAgY29uc3QgeyBzdGlja3kgfSA9IHVzZVN0YXRlQ29udGV4dCgyKTtcblxuICByZXR1cm4gW3N0aWNreV07XG59XG4iXX0=
