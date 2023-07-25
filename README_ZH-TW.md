@@ -72,7 +72,7 @@
 
 ## 🔧 手動安裝
 
-- 從 [Releases](https://github.com/SingularityLabs-ai/GrandGPT/releases) 下載 grandgpt.zip
+- 從 [Releases](https://github.com/SingularityLabs-ai/GrandGPT-mini/releases) 下載 grandgpt.zip
 - 解壓縮該文件
 - 在 Chrome/Edge 瀏覽器中，前往擴展功能頁面 (chrome://extensions 或 edge://extensions)
 - 啟用開發人員模式

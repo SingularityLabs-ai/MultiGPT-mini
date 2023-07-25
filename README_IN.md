@@ -72,7 +72,7 @@
 
 ## 🔧 Instalasi Manual
 
-- Unduh grandgpt.zip dari [Release](https://github.com/SingularityLabs-ai/GrandGPT/releases)
+- Unduh grandgpt.zip dari [Release](https://github.com/SingularityLabs-ai/GrandGPT-mini/releases)
 - Ekstrak file
 - Di Chrome/Edge, buka halaman ekstensi (chrome://extensions atau edge://extensions)
 - Aktifkan Mode Pengembang
