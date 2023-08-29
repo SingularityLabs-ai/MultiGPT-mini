@@ -37,6 +37,14 @@ English &nbsp;&nbsp;|&nbsp;&nbsp; [Indonesia](README_IN.md) &nbsp;&nbsp;|&nbsp;&
 
 </div>
 
+## Todo
+
+- cohere https://dashboard.cohere.com/playground/generate
+- Small_Talk https://developer.kore.ai/docs/bots/bot-builder-tool/small-talk/#Import_Small_Talk
+- Purplexity.ai
+- chatgptdemo
+- xunika
+
 ##
 
 ## 📷 Screenshot
