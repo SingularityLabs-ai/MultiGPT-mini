@@ -78,10 +78,6 @@ English &nbsp;&nbsp;|&nbsp;&nbsp; [Indonesia](README_IN.md) &nbsp;&nbsp;|&nbsp;&
 * Vicuna
 * ...
 
-## TODO Bots
-
-* https://www.perplexity.ai/
-* 
 
 ## 🔧 Manual Installation
 
