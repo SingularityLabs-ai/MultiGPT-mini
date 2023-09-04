@@ -42,9 +42,29 @@ English &nbsp;&nbsp;|&nbsp;&nbsp; [Indonesia](README_IN.md) &nbsp;&nbsp;|&nbsp;&
 - cohere https://dashboard.cohere.com/playground/generate
 - Small_Talk https://developer.kore.ai/docs/bots/bot-builder-tool/small-talk/#Import_Small_Talk
 - Purplexity.ai
-- chatgptdemo
-- xunika
 - openrouter
+- chat.forefront.ai domain specific bots
+- deepai.org
+- sdk.vercel.ai (have multiple bots like poe)
+- chatgpt via https://chat.acytoo.com
+- Midjourney alternative editor.fusionbrain.ai
+
+- LAION AI H2oGPT https://gpt-gm.h2o.ai/conversation/
+- gptgod
+- easy chat openai https://chat9.fastgpt.me/
+- GPT3.5 via chat.chatgptdemo.net
+- chatgpt via https://e.aifree.site/
+- chatgpt via https://h.aifree.site/
+- GPT3.5 via https://chats.free2gpt.xyz/
+- GPT3 via https://pizzagpt.it/
+- GPT3 via powerchat.top
+- Bing via hf4all-bingo.hf.space
+- slack bots CLAUDE_BOT_ID = ['U05J5M9E7MZ','U05J74AT9DL','U05J79DQC0N']
+- GPT4 via https://gpt4h.ninvfeng.xyz/
+- gpt4 xunika
+  
+
+
 
 ##
 
