@@ -81,8 +81,8 @@ English &nbsp;&nbsp;|&nbsp;&nbsp; [Indonesia](README_IN.md) &nbsp;&nbsp;|&nbsp;&
 
 | Website| Provider| gpt-3.5 | gpt-4 | Stream | Status | Auth |
 | --- | --- | --- | --- | --- | --- | --- |
-| [ai.ls](https://ai.ls) | `MultiGPT.Ails` | ✔️ | ❌ | ✔️ | ![Active](https://img.shields.io/badge/Active-brightgreen) | ❌ |
-| [you.com](https://you.com) | `MultiGPT.You` | ✔️ | ❌ | ✔️ | ![Inactive](https://img.shields.io/badge/Inactive-red) | ❌ |
+| [ai.ls](https://ai.ls) | `MultiGPT.Ails` | ✔️ | ❌ | ✔️ | ![Inactive](https://img.shields.io/badge/Inactive-red) | ❌ |
+| [you.com](https://you.com) | `MultiGPT.You` | ✔️ | ❌ | ✔️ | ![Active](https://img.shields.io/badge/Active-brightgreen) | ❌ |
 | [bing.com](https://bing.com/chat) | `MultiGPT.Bing` | ❌ | ✔️ | ✔️ | ![Active](https://img.shields.io/badge/Active-brightgreen) | ❌ |
 | [chat9.yqcloud.top](https://chat9.yqcloud.top/) | `MultiGPT.Yqcloud` | ✔️ | ❌ | ✔️ | ![Inactive](https://img.shields.io/badge/Inactive-red) | ❌ |
 | [theb.ai](https://theb.ai) | `MultiGPT.Theb` | ✔️ | ❌ | ✔️ | ![Inactive](https://img.shields.io/badge/Inactive-red) | ❌ |
