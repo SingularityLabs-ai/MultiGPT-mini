@@ -29,8 +29,8 @@ English &nbsp;&nbsp;|&nbsp;&nbsp; [Indonesia](README_IN.md) &nbsp;&nbsp;|&nbsp;&
 
 [Screenshot](#-screenshot) &nbsp;&nbsp;|&nbsp;&nbsp; [Features](#-features) &nbsp;&nbsp;|&nbsp;&nbsp; [Supported Bots](#-supported-bots) &nbsp;&nbsp;|&nbsp;&nbsp; [Manual Installation](#-manual-installation) &nbsp;&nbsp;|&nbsp;&nbsp; [Build from Source](#-build-from-source) &nbsp;&nbsp;|&nbsp;&nbsp; [Changelog](#-changelog)
 
-[author-image]: https://img.shields.io/badge/author-SingularityLabs-ai-blue.svg
-[author-url]: https://github.com/SingularityLabs-ai
+[author-image]: https://img.shields.io/badge/author-ishandutta2007-blue.svg
+[author-url]: https://github.com/ishandutta2007
 [license-image]: https://img.shields.io/github/license/ishandutta2007/MultiGPT?color=blue
 [license-url]: https://github.com/SingularityLabs-ai/MultiGPT/blob/main/LICENSE
 [release-image]: https://img.shields.io/github/v/release/ishandutta2007/MultiGPT?color=blue
