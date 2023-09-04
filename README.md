@@ -44,10 +44,12 @@ English &nbsp;&nbsp;|&nbsp;&nbsp; [Indonesia](README_IN.md) &nbsp;&nbsp;|&nbsp;&
 - perplexity.ai
 - openrouter.ai
 - forefront.ai domain specific bots
+- chatgpt and dall e via beta.theb.ai
 - deepai.org
 - sdk.vercel.ai (have multiple bots like poe)
 - Midjourney alternative editor.fusionbrain.ai
 - chatgpt via https://chat.acytoo.com
+- https://apps.apple.com/app/id6446304087
 
 - LAION AI H2oGPT https://gpt-gm.h2o.ai/conversation/
 - gptgod
