@@ -41,13 +41,13 @@ English &nbsp;&nbsp;|&nbsp;&nbsp; [Indonesia](README_IN.md) &nbsp;&nbsp;|&nbsp;&
 
 - cohere https://dashboard.cohere.com/playground/generate
 - Small_Talk https://developer.kore.ai/docs/bots/bot-builder-tool/small-talk/#Import_Small_Talk
-- Purplexity.ai
-- openrouter
-- chat.forefront.ai domain specific bots
+- perplexity.ai
+- openrouter.ai
+- forefront.ai domain specific bots
 - deepai.org
 - sdk.vercel.ai (have multiple bots like poe)
-- chatgpt via https://chat.acytoo.com
 - Midjourney alternative editor.fusionbrain.ai
+- chatgpt via https://chat.acytoo.com
 
 - LAION AI H2oGPT https://gpt-gm.h2o.ai/conversation/
 - gptgod
