@@ -51,6 +51,15 @@ English &nbsp;&nbsp;|&nbsp;&nbsp; [Indonesia](README_IN.md) &nbsp;&nbsp;|&nbsp;&
 - chatgpt via https://chat.acytoo.com
 - https://apps.apple.com/app/id6446304087
 
+### GPT4
+- GPT4 via liaobots.com
+- GPT4 via https://gpt4h.ninvfeng.xyz/
+- gpt4 xunika
+
+### Bing(GPT4)
+- Bing via hf4all-bingo.hf.space
+
+### GPT3.5
 - LAION AI H2oGPT https://gpt-gm.h2o.ai/conversation/
 - gptgod
 - easy chat openai https://chat9.fastgpt.me/
@@ -61,10 +70,11 @@ English &nbsp;&nbsp;|&nbsp;&nbsp; [Indonesia](README_IN.md) &nbsp;&nbsp;|&nbsp;&
 - GPT3.5 via https://chats.free2gpt.xyz/
 - GPT3 via https://pizzagpt.it/
 - GPT3 via powerchat.top
-- Bing via hf4all-bingo.hf.space
+
+
 - slack bots CLAUDE_BOT_ID = ['U05J5M9E7MZ','U05J74AT9DL','U05J79DQC0N']
-- GPT4 via https://gpt4h.ninvfeng.xyz/
-- gpt4 xunika
+
+- 
   
 
 
