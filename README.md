@@ -53,6 +53,7 @@ English &nbsp;&nbsp;|&nbsp;&nbsp; [Indonesia](README_IN.md) &nbsp;&nbsp;|&nbsp;&
 - gptgod
 - easy chat openai https://chat9.fastgpt.me/
 - GPT3.5 via chat.chatgptdemo.net
+- chatgpt via ai.ls
 - chatgpt via https://e.aifree.site/
 - chatgpt via https://h.aifree.site/
 - GPT3.5 via https://chats.free2gpt.xyz/
