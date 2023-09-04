@@ -32,11 +32,11 @@ English &nbsp;&nbsp;|&nbsp;&nbsp; [Indonesia](README_IN.md) &nbsp;&nbsp;|&nbsp;&
 [author-image]: https://img.shields.io/badge/author-ishandutta2007-blue.svg
 [author-url]: https://github.com/ishandutta2007
 [license-image]: https://img.shields.io/github/license/ishandutta2007/MultiGPT?color=blue
-[license-url]: https://github.com/SingularityLabs-ai/MultiGPT/blob/main/LICENSE
-[release-image]: https://img.shields.io/github/v/release/ishandutta2007/MultiGPT?color=blue
-[release-url]: https://github.com/SingularityLabs-ai/MultiGPT/releases/latest
-[last-commit-image]: https://img.shields.io/github/last-commit/ishandutta2007/MultiGPT?label=last%20commit
-[last-commit-url]: https://github.com/SingularityLabs-ai/MultiGPT/commits
+[license-url]: https://github.com/SingularityLabs-ai/MultiGPT-mini/blob/main/LICENSE
+[release-image]: https://img.shields.io/github/v/release/ishandutta2007/MultiGPT-mini?color=blue
+[release-url]: https://github.com/SingularityLabs-ai/MultiGPT-mini/releases/latest
+[last-commit-image]: https://img.shields.io/github/last-commit/ishandutta2007/MultiGPT-mini?label=last%20commit
+[last-commit-url]: https://github.com/SingularityLabs-ai/MultiGPT-mini/commits
 
 </div>
 
