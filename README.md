@@ -19,8 +19,6 @@ English &nbsp;&nbsp;|&nbsp;&nbsp; [Indonesia](README_IN.md) &nbsp;&nbsp;|&nbsp;&
 
 ### Install
 
-![brave-logo-small](h8)
-
 <a href="https://chrome.google.com/webstore/detail/multigpt-access-all-chatb/dfobejficjaelohpjceiicphofmmglop?hl=en&authuser=0">
     <img src="https://user-images.githubusercontent.com/64502893/231991498-8df6dd63-727c-41d0-916f-c90c15127de3.png" width="200" alt="Get MultiGPT for Chromium">    
 </a><a href="https://microsoftedge.microsoft.com/addons/detail/hdlddhcngcdpcgajecjoccekfofmllfn">
