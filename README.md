@@ -63,6 +63,7 @@ English &nbsp;&nbsp;|&nbsp;&nbsp; [Indonesia](README_IN.md) &nbsp;&nbsp;|&nbsp;&
 - ChatGLM2
 - Qianwen
 - Baichuan
+- Tongyi Qianwen
 - Small_Talk https://developer.kore.ai/docs/bots/bot-builder-tool/small-talk/#Import_Small_Talk
 - openrouter.ai
 - forefront.ai domain specific bots
