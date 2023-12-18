@@ -19,13 +19,17 @@ English &nbsp;&nbsp;|&nbsp;&nbsp; [Indonesia](README_IN.md) &nbsp;&nbsp;|&nbsp;&
 
 ### Install
 
+![brave-logo-small](h
+t
+
+
 <a href="https://chrome.google.com/webstore/detail/multigpt-access-all-chatb/dfobejficjaelohpjceiicphofmmglop?hl=en&authuser=0">
     <img src="https://user-images.githubusercontent.com/64502893/231991498-8df6dd63-727c-41d0-916f-c90c15127de3.png" width="200" alt="Get MultiGPT for Chromium">    
 </a><a href="https://microsoftedge.microsoft.com/addons/detail/hdlddhcngcdpcgajecjoccekfofmllfn">
     <img src="https://user-images.githubusercontent.com/64502893/231991158-1b54f831-2fdc-43b6-bf9a-f894000e5aa8.png" width="160" alt="Get MultiGPT for Microsoft Edge">
 </a>
 <a href="https://chrome.google.com/webstore/detail/multigpt-access-all-chatb/dfobejficjaelohpjceiicphofmmglop?hl=en&authuser=0">
-    <img src="https://github.com/SingularityLabs-ai/MultiGPT-mini/assets/2527354/6d9b04e6-4b14-4319-b44b-774187576396" width="200" alt="Get MultiGPT for Brave">
+    <img src="https://github.com/SingularityLabs-ai/MultiGPT-mini/assets/2527354/cd8bebe3-7b52-437e-b5b1-1f9b0d0ae7a0" width="200" alt="Get MultiGPT for Brave">
 </a>
 
 
