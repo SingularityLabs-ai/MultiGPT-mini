@@ -25,7 +25,7 @@ English &nbsp;&nbsp;|&nbsp;&nbsp; [Indonesia](README_IN.md) &nbsp;&nbsp;|&nbsp;&
     <img src="https://user-images.githubusercontent.com/64502893/231991158-1b54f831-2fdc-43b6-bf9a-f894000e5aa8.png" width="160" alt="Get MultiGPT for Microsoft Edge">
 </a>
 <a href="https://chrome.google.com/webstore/detail/multigpt-access-all-chatb/dfobejficjaelohpjceiicphofmmglop?hl=en&authuser=0">
-    <img src="https://github.com/SingularityLabs-ai/MultiGPT-mini/assets/2527354/664e46d8-a5fa-4087-b36b-eb588b4f8d20" width="200" alt="Get MultiGPT for Brave">
+    <img src="https://github.com/SingularityLabs-ai/MultiGPT-mini/assets/2527354/f501fba7-6488-49f6-b416-ea4bb1788877" width="200" alt="Get MultiGPT for Brave">
 </a>
 
 
