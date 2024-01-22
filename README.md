@@ -12,6 +12,9 @@
 
 [![Join us on Discord](https://invidget.switchblade.xyz/jc4xtF58Ve)](https://discord.gg/jc4xtF58Ve)
 
+[![FollowButtonGithub](https://github.com/SingularityLabs-ai/MultiGPT-mini/assets/2527354/3b54c01d-3e5e-4918-9513-2f08aee13990)](https://github.com/SingularityLabs-ai)
+
+
 ##
 English &nbsp;&nbsp;|&nbsp;&nbsp; [Indonesia](README_IN.md) &nbsp;&nbsp;|&nbsp;&nbsp; [简体中文](README_ZH-CN.md) &nbsp;&nbsp;|&nbsp;&nbsp; [繁體中文](README_ZH-TW.md) &nbsp;&nbsp;|&nbsp;&nbsp; [日本語](README_JA.md)
 
