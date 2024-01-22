@@ -12,7 +12,9 @@
 
 [![Join us on Discord](https://invidget.switchblade.xyz/jc4xtF58Ve)](https://discord.gg/jc4xtF58Ve)
 
-[![FollowButtonGithub](https://github.com/SingularityLabs-ai/MultiGPT-mini/assets/2527354/3b54c01d-3e5e-4918-9513-2f08aee13990)](https://github.com/SingularityLabs-ai)
+
+[![FollowSmallButtonGithub](https://github.com/SingularityLabs-ai/MultiGPT-mini/assets/2527354/a4a46537-669c-4e97-8e5f-05ff083c3070)](https://github.com/SingularityLabs-ai)
+
 
 
 ##
