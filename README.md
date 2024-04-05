@@ -226,3 +226,7 @@ English &nbsp;&nbsp;|&nbsp;&nbsp; [Indonesia](README_IN.md) &nbsp;&nbsp;|&nbsp;&
 [![Join us on Discord](https://invidget.switchblade.xyz/jc4xtF58Ve)](https://discord.gg/jc4xtF58Ve)
 
 ##
+
+## Credits:
+
+Built using starter project of https://github.com/SingularityLabs-ai/ChromeTabbedAppBoilerplate
